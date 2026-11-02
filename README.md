@@ -17,7 +17,7 @@ No es un ranking oficial, no es una auditoría y no acusa a nadie. Todos los mon
 
 ## Los datos
 
-En `site/data/`.
+En `site/data/`. Los CSV también se descargan desde el sitio, en la sección "Datos abiertos".
 
 | Archivo | Una fila por | Contenido |
 |---|---|---|
