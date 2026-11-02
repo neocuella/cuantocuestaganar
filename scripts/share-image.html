@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- Source of site/og.png (1200x630 share image). Reuses the site's receipt styles; render with
+     scripts/render-share-image.sh after the total changes. -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site/styles.css">
+  <style>
+    html, body { margin: 0; inline-size: 1200px; block-size: 630px; overflow: hidden; }
+    .hero { min-block-size: 0; block-size: 630px; padding: 0; gap: 0; }
+    /* Still frame: no entrance animations */
+    .hero *, .hero *::before, .hero *::after { animation: none !important; }
+    .fine-print { inline-size: 17rem; font-size: 7.5px; }
+    .fine-print-tl { inset-block-start: 2.25rem; inset-inline-start: 2.5rem; }
+    .fine-print-br { inset-block-start: auto; inset-block-end: 2.25rem; inset-inline-end: 2.5rem; translate: none; }
+    .hero-paper { inline-size: 31rem; }
+    .hero-receipt { padding: calc(1.5rem + var(--tooth)) 2.25rem calc(1.25rem + var(--tooth)); }
+    .hero-receipt h1 { font-size: 4.5rem; margin-block-start: 1rem; }
+    .hr-rule { margin-block: 1rem; }
+    .hr-lede { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+    .hr-barcode { margin-block-start: 1.5rem; }
+    .stamp { inline-size: 8.5rem; inset-inline-end: 1.25rem; inset-block-end: 0; }
+    .hero .site-url {
+      position: absolute;
+      inset-block-end: 2.25rem;
+      inset-inline-start: 2.5rem;
+      margin: 0;
+      color: var(--mustard);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <p class="fine-print fine-print-tl" data-fine-print></p>
+    <p class="fine-print fine-print-br" data-fine-print></p>
+    <div class="hero-paper">
+      <div class="fold">
+        <span class="halftone"></span>
+        <article class="paper hero-receipt">
+          <p class="hr-top"><span>TTK 2026</span><span>Shortlist + ganadores</span></p>
+          <h1><span class="marker">¿Cuánto</span><br><span class="marker">cuesta ganar?</span></h1>
+          <div class="hr-rule"></div>
+          <p class="hr-lede">La inversión de cada agencia en finalistas del Tatakua 2026, con sus metales.</p>
+          <div class="hr-rule hr-rule-double"></div>
+          <p class="hr-total"><span>Inversión en finalistas</span><span>Gs. <span data-total>116.050.000</span></span></p>
+          <p class="hr-fine">IVA incluido · Agencias, sin productoras · Cálculo independiente, no oficial</p>
+          <div class="hr-barcode" data-barcode></div>
+          <svg class="stamp" viewBox="0 0 160 160">
+            <defs>
+              <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="noise"/>
+                <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 2" result="speckle"/>
+                <feComposite in="SourceGraphic" in2="speckle" operator="in" result="inked"/>
+                <feDisplacementMap in="inked" in2="noise" scale="2.5"/>
+              </filter>
+              <path id="ring" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/>
+            </defs>
+            <g filter="url(#ink)">
+              <circle cx="80" cy="80" r="74" fill="none" stroke="currentColor" stroke-width="4"/>
+              <circle cx="80" cy="80" r="44" fill="none" stroke="currentColor" stroke-width="2"/>
+              <text class="stamp-ring"><textPath href="#ring" startOffset="0" textLength="362" lengthAdjust="spacing">TATAKUA 2026 · CUENTA NO OFICIAL ·</textPath></text>
+              <text class="stamp-core" x="80" y="94" text-anchor="middle">TTK</text>
+            </g>
+          </svg>
+        </article>
+      </div>
+    </div>
+    <p class="site-url">cuantocuestaganar.rickovelar.com</p>
+  </header>
+  <script>
+    const fine = 'Festival Tatakua 2026 · Costos de inscripción · Piezas Gs. 660.000 · Campañas Gs. 880.000 · Integradas Gs. 990.000 · Precios con IVA incluido · Recargo por inscripción tardía Gs. 100.000 · Puntuación · Gran Tatakua 15 · Oro 9 · Plata 6 · Bronce 3 · Finalista 1 · Cierre de inscripciones 9 de octubre de 2026 · ';
+    document.querySelectorAll('[data-fine-print]').forEach(el => { el.textContent = fine.repeat(2); });
+    // Same bars as the hero receipt's barcode
+    const bars = [[0,3],[4,3],[8,1],[10,2],[13,4],[22,2],[30,2],[33,2],[36,2],[41,3],[45,2],[48,3],[52,3],[56,1],[77,1],[79,1],[85,3],[93,1],[95,4],[105,4],[110,2],[117,2],[125,4],[130,4],[135,4],[140,4],[153,2],[156,2],[159,4],[169,2],[172,2],[190,4],[199,2],[215,2],[218,3],[222,2],[230,2],[233,3]];
+    document.querySelector('[data-barcode]').innerHTML =
+      `<svg class="barcode" viewBox="0 0 240 44" preserveAspectRatio="none">${bars.map(([x, w]) => `<rect x="${x}" width="${w}" height="44"/>`).join('')}</svg>`;
+  </script>
+</body>
+</html>

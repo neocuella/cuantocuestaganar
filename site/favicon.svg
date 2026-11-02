@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Medal with a star: red ribbon, mustard medal, in the site's inks. Dark outline so it reads on
+       light and dark tabs. -->
+  <g stroke="#2a2a2a" stroke-width="1.75" stroke-linejoin="round">
+    <path d="M7 1.5h7l3.5 9.5h-7zM25 1.5h-7l-3.5 9.5h7z" fill="#ec1b1d"/>
+    <circle cx="16" cy="20" r="11" fill="#dec43d"/>
+  </g>
+  <path d="M16 13.6l2.03 4.12 4.55.66-3.29 3.21.78 4.53L16 23.98l-4.07 2.14.78-4.53-3.29-3.21 4.55-.66z" fill="#2a2a2a" transform="translate(16 20) scale(1.12) translate(-16 -20.3)"/>
+</svg>

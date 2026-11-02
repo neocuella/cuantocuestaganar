@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/wrangler@4.156.0/config-schema.json",
+  "name": "cuantocuestaganar",
+  "compatibility_date": "2026-10-30",
+  // Static site only: everything in site/ is served as-is, no Worker script.
+  "assets": {
+    "directory": "./site"
+  },
+  "routes": [
+    { "pattern": "cuantocuestaganar.rickovelar.com", "custom_domain": true }
+  ],
+  "workers_dev": false
+}
