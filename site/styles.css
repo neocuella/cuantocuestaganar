@@ -187,6 +187,31 @@ button { touch-action: manipulation; user-select: none; -webkit-user-select: non
 }
 .hero > :not(.fine-print) { position: relative; z-index: 1; }
 
+/* X and GitHub, top-right corner of the first screen. The links' padding makes the tap target;
+   the negative offset lines the icon itself up with the gutter. */
+.hero > .hero-links {
+  position: absolute;
+  z-index: 2;
+  inset-block-start: calc(2rem - 0.75rem);
+  inset-inline-end: calc(var(--gutter) - 0.75rem);
+  display: flex;
+}
+
+.hero-links a {
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  color: var(--muted);
+  transition: color 150ms;
+}
+
+.hero-links svg { inline-size: 1.25rem; block-size: 1.25rem; fill: currentColor; }
+.hero-links a:active { color: var(--mustard); }
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-links a:hover { color: var(--mustard); }
+}
+
 /* Beside section titles, only where there is room for it */
 .section-head { position: relative; }
 .section-head > :not(.fine-print) { position: relative; z-index: 1; }
@@ -201,7 +226,9 @@ button { touch-action: manipulation; user-select: none; -webkit-user-select: non
 
 @media (width < 48rem) {
   .fine-print-br { display: none; }
-  .fine-print-tl { inline-size: auto; inset-inline-end: var(--gutter); inset-block-start: 1.25rem; }
+  /* Stops short of the X and GitHub icons */
+  .fine-print-tl { inline-size: auto; inset-inline-end: calc(var(--gutter) + 5.5rem); inset-block-start: 1.25rem; }
+  .hero > .hero-links { inset-block-start: calc(1.25rem - 0.75rem); }
 }
 
 /* Hero: one receipt on black */
