@@ -368,7 +368,8 @@ button { touch-action: manipulation; user-select: none; -webkit-user-select: non
 }
 
 /* Red halftone behind the hero receipt, offset like a misprinted shadow: dense at the bottom-right
-   corner, fading out. It sits inside the fold, so it tilts with the paper and grows as it opens. */
+   corner, fading out. It sits inside the fold, so it tilts with the paper; while folded it is sized
+   to the folded receipt and keeps that size when the receipt opens over it. */
 .halftone {
   position: absolute;
   inset: 1.75rem -1.75rem -1.75rem 1.75rem;
@@ -441,6 +442,7 @@ button { touch-action: manipulation; user-select: none; -webkit-user-select: non
 .hero-paper.fold-ready { min-block-size: var(--full); }
 .hero-paper.fold-ready .fold-top { block-size: var(--third); overflow: clip; }
 .hero-paper.is-open .fold { block-size: var(--full); }
+.hero-paper:is(.fold-ready, .is-done) .halftone { inset-block-end: auto; block-size: calc(var(--third) + var(--peek)); }
 
 .fold-rest {
   position: absolute;
