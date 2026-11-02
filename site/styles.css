@@ -325,23 +325,6 @@ button { touch-action: manipulation; user-select: none; -webkit-user-select: non
 
 .hr-name { font-weight: 600; }
 
-.hr-sign a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: color-mix(in oklch, var(--ink) 40%, transparent);
-  text-underline-offset: 0.2em;
-}
-
-.hr-sign svg { flex: none; inline-size: 0.875rem; block-size: 0.875rem; fill: currentColor; }
-.hr-sign a:active { opacity: 0.7; }
-
-@media (hover: hover) and (pointer: fine) {
-  .hr-sign a:hover { color: var(--red); text-decoration-color: currentColor; }
-}
-
 .hr-total {
   display: flex;
   flex-wrap: wrap;
