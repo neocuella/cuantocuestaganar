@@ -220,11 +220,13 @@ function medalPips(m, finalists = 0, grans = 0) {
   return `<span class="pips">${[...gran, ...metals, ...finalist].join('')}</span>`;
 }
 
+// An advertiser's total counts every entrant that worked for it, productoras included: it is what
+// was invested in the brand's finalists, with no points to reconstruct.
 function brandCard(w, unit) {
   const totals = new Map();
-  for (const r of state.rows) totals.set(r.brand, (totals.get(r.brand) ?? 0) + r.feeGs);
+  for (const r of state.allRows) totals.set(r.brand, (totals.get(r.brand) ?? 0) + r.feeGs);
   const rank = [...totals.values()].sort((a, b) => b - a).indexOf(totals.get(w.brand)) + 1;
-  const entries = state.rows.filter((r) => r.brand === w.brand);
+  const entries = state.allRows.filter((r) => r.brand === w.brand);
   const byAgency = new Map();
   for (const r of entries) byAgency.set(r.agency, (byAgency.get(r.agency) ?? 0) + r.feeGs);
   const split = [...byAgency].sort((a, b) => b[1] - a[1])
@@ -235,11 +237,11 @@ function brandCard(w, unit) {
       <span class="winner-name">${esc(w.brand)}</span>
       <span class="winner-amount">${unit} ${money(totals.get(w.brand))}</span>
       <span class="winner-medals">${(() => {
-        const medals = countMetals(state.metals.filter((m) => entries.some((r) => r.title === m.title && r.agency === m.agency)));
+        const medals = countMetals(state.allMetals.filter((m) => entries.some((r) => r.title === m.title && r.agency === m.agency)));
         return medalPips(medals, entries.length - metalTotal(medals));
       })()}</span>
       <span class="winner-meta">${entries.length} finalistas · ${new Set(entries.map((r) => r.title)).size} ideas · #${rank} de ${totals.size} marcas</span>
-      <ul class="winner-split" aria-label="Por agencia">${split}</ul>
+      <ul class="winner-split" aria-label="Por inscripto">${split}</ul>
     </div>`;
 }
 
