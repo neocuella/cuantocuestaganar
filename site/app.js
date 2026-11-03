@@ -8,7 +8,7 @@ const TOTAL_ENTRIES_APPROX = 800; // inscripciones totales del festival, dato ap
 const WINNERS = [
   { award: 'Agencia del Año', agency: 'ONIRIA TBWA' },
   { award: 'Agencia Independiente del Año', agency: 'VEINTITRÉS' },
-  { award: 'Anunciante del Año', brand: 'UENO BANK' },
+  { award: 'Anunciante del Año', brand: 'CERVEPAR' },
   { award: 'Gran Tatakua', agency: 'EL CREATIVO', idea: 'SMASHED RACTIS' },
 ];
 
