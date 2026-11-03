@@ -43,6 +43,7 @@ Resumen 2026: 192 finalistas (163 de 17 agencias, 29 de 7 productoras), 105 idea
 | [TotalMedios](https://www.totalmedios.com/nota/65680/oniriatbwa-fue-elegida-agencia-del-ano-en-tatakua-2026) | total de ≈800 inscripciones; segunda lista de ganadores para cruzar |
 | [Diario HOY](https://www.hoy.com.py/negocios/2026/10/27/oniriatbwa-la-mejor-agencia-del-paraguay-en-el-festival-tatakua), [El Nacional](https://elnacional.com.py/lifestyle/oniriatbwa-conquista-su-decimosexto-titulo-mejor-agencia-tatakua-n114313) | cruce de metales y finalistas de Oniria TBWA; premios del año |
 | [Revista Plus](https://revistaplus.com.py/2026/10/28/veintitres-sports-hace-historia-es-la-mejor-agencia-independiente-del-tatakua-2026/), [1000 Noticias](https://1000noticias.com.py/2026/10/29/veintitres-sports-marketing-se-consagra-como-mejor-agencia-independiente-en-tatakua-2026/) | reportan 6 bronces para Veintitrés, uno más que AdLatina |
+| [Instagram de El Círculo de Creativos del Paraguay](https://www.instagram.com/p/DfQrZOODRz4/?img_index=6) | Anunciante del Año (Cervepar) |
 
 Pasos:
 
